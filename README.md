@@ -145,7 +145,7 @@ const params = {
 RNGeofence.initialize(params);
 ```
 
-`RNGeofence.requestPermission()` must be called later if permission is not requested during init
+`RNGeofence.requestPermission()` must be called later if permission is not requested during initialization
 
 ---
 
@@ -161,7 +161,7 @@ RNGeofence.requestPermission();
 
 ### checkPermission()
 
-Checks and returns a `true` if location permissions have been granted by the user. Else `false` is returned.
+Checks and returns `true` if location permissions have been granted by the user. Else `false` is returned.
 
 ```js
 RNGeofence.checkPermission().then(result => console.info(result));

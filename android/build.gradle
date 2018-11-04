@@ -1,0 +1,47 @@
+def safeExtGet(prop, fallback) {
+    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "$projectDir/../node_modules/react-native/android" }
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+
+    compileSdkVersion safeExtGet('compileSdkVersion', 26)
+    buildToolsVersion safeExtGet('buildToolsVersion', '26.0.3')
+
+    defaultConfig {
+        minSdkVersion safeExtGet('minSdkVersion', 16)
+        targetSdkVersion safeExtGet('targetSdkVersion', 26)
+        versionCode 1
+        versionName "1.0"
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    def googlePlayServicesVersion = safeExtGet('googlePlayServicesVersion', '+')
+//
+//    implementation 'com.facebook.react:react-native:+'
+//    implementation "com.google.android.gms:play-services-gcm:$googlePlayServicesVersion"
+    api "com.google.android.gms:play-services-location:$googlePlayServicesVersion"
+}

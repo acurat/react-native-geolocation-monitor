@@ -1,0 +1,25 @@
+{
+  "name": "react-native-geofencing",
+  "version": "0.0.1",
+  "description": "Create and monitor geofences using React Native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": "Arjun Curat",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddieowens/react-native-boundary.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "react": "^16.2.0",
+    "react-native": "^0.51.0"
+  },
+  "peerDependencies": {
+    "react-native": ">=0.41.2"
+  }
+}

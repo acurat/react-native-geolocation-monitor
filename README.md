@@ -74,12 +74,61 @@ to your Info.plist file.
 If your app supports iOS 10 and earlier, add the `NSLocationAlwaysUsageDescription` key to your Info.plist file.
  (Xcode displays this key as "Privacy - Location Always Usage Description" in the Info.plist editor.)
 
+> If you need updates when the app is in background mode, add the following to your Info.plist 
+```
+	<key>UIBackgroundModes</key>
+	<array>
+	    <string>location</string>
+	</array>
+```
 
 ## Usage
 ```js
-import RNGeofence, { Constants } from 'react-native-geofence';
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
 
+import Geofence, { Constants } from 'react-native-geolocation-monitor';
 
+export default class App extends Component {
+  subscription;
+
+  componentDidMount() {
+    Geofence.initialize({ requestPermission: true });
+
+    Geofence.add({
+      id: 'work',
+      radius: 50,
+      latitude: 37.422611,
+      longitude: -122.0840577,
+    })
+      .then(result => console.warn(result))
+      .catch(error => console.warn(JSON.stringify(error)));
+
+    this.subscription = Geofence.notify(result => {
+      console.warn(result);
+    });
+  }
+
+  componentWillUnmount() {
+    if (this.subscription) {
+      this.subscription.remove();
+    }
+  }
+
+  render() {
+    return (
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Text>Basic Usage!</Text>
+      </View>
+    );
+  }
+}
 ```
 
 ## API

@@ -259,7 +259,7 @@ RNGeofence.clear();
 
 ### count()
 
-Clears all geofences. Available only on iOS. The promise resolves with a number. 
+Counts all current geofences. Available only on iOS. The promise resolves with a number. 
 
 Android returns -1
 

@@ -76,7 +76,7 @@ If your app supports iOS 10 and earlier, add the `NSLocationAlwaysUsageDescripti
 
 
 ## Usage
-```javascript
+```js
 import RNGeofence, { Constants } from 'react-native-geofence';
 
 
@@ -199,14 +199,12 @@ RNGeofence.remove(['work', 'home']).then(result => console.info(result));
 
 ### clear()
 
-Clears all geofences. The promise resolves with a void. 
+Clears all geofences. This returns a promise that resolves with a void. 
 
 ```js
 
 RNGeofence.clear();
 
-
-// result is a void
 ```
 ---
 
@@ -228,11 +226,11 @@ RNGeofence.count()
 
 ### notify()
 
-Provide a callback that is called when a geofence transition occurs. 
+Provide a callback to notify that is called when a geofence transition occurs. 
 
 ```js
 
-subscription = Geofences.notify((response) => console.log(JSON.stringify(response)));
+const subscription = Geofences.notify((response) => console.log(JSON.stringify(response)));
 
 /*
     response contains

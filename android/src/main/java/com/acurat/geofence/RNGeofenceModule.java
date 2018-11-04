@@ -49,7 +49,7 @@ public class RNGeofenceModule extends ReactContextBaseJavaModule implements Life
     private GeofencingClient mGeofencingClient;
     private PendingIntent mGeofencePendingIntent;
 
-    public GeofenceModule(ReactApplicationContext reactContext) {
+    public RNGeofenceModule(ReactApplicationContext reactContext) {
         super(reactContext);
         mGeofencingClient = LocationServices.getGeofencingClient(reactContext);
         mMessageReceiver = new ConnectivityBroadcastReceiver();

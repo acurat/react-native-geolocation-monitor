@@ -40,8 +40,9 @@ android {
 
 dependencies {
     def googlePlayServicesVersion = safeExtGet('googlePlayServicesVersion', '+')
-//
-//    implementation 'com.facebook.react:react-native:+'
-//    implementation "com.google.android.gms:play-services-gcm:$googlePlayServicesVersion"
+    def supportLibVersion = safeExtGet('supportLibVersion', '26.1.0')
+
+    implementation 'com.facebook.react:react-native:+'
+    api "com.android.support:appcompat-v7:$supportLibVersion"
     api "com.google.android.gms:play-services-location:$googlePlayServicesVersion"
 }

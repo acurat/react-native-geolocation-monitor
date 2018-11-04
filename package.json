@@ -1,6 +1,6 @@
 {
   "name": "react-native-geolocation-monitor",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Create and monitor geofences using React Native",
   "main": "index.js",
   "scripts": {

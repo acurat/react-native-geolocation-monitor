@@ -33,7 +33,7 @@ final class RNGeofenceHelper {
         return false;
     }
 
-    public static WritableMap convertDataObjectToRNMap(GeofenceDataObject data) {
+    public static WritableMap convertDataObjectToRNMap(RNGeofenceDataObject data) {
 
         WritableMap map = Arguments.createMap();
         WritableArray ids = Arguments.fromList(data.getRequestIds());
@@ -46,9 +46,9 @@ final class RNGeofenceHelper {
     public static String getTransitionCode(int transitionType) {
         switch (transitionType) {
             case Geofence.GEOFENCE_TRANSITION_ENTER:
-                return GeofenceConstants.ENTER;
+                return RNGeofenceConstants.ENTER;
             case Geofence.GEOFENCE_TRANSITION_EXIT:
-                return GeofenceConstants.EXIT;
+                return RNGeofenceConstants.EXIT;
             default:
                 return "Unknown Transition";
         }

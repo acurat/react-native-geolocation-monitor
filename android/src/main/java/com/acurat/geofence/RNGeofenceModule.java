@@ -65,8 +65,8 @@ public class RNGeofenceModule extends ReactContextBaseJavaModule implements Life
         final Map<String, Object> constants = new HashMap<>();
 
         final Map<String, String> types = new HashMap<>();
-        types.put(GeofenceConstants.ENTER, GeofenceConstants.ENTER);
-        types.put(GeofenceConstants.EXIT, GeofenceConstants.EXIT);
+        types.put(RNGeofenceConstants.ENTER, RNGeofenceConstants.ENTER);
+        types.put(RNGeofenceConstants.EXIT, RNGeofenceConstants.EXIT);
         constants.put("TRANSITION_TYPES", types);
         return constants;
     }
@@ -276,7 +276,7 @@ public class RNGeofenceModule extends ReactContextBaseJavaModule implements Life
     private void registerReceiver() {
         mMessageReceiver.setRegistered(true);
         LocalBroadcastManager.getInstance(this.getReactApplicationContext())
-                .registerReceiver(mMessageReceiver, new IntentFilter(GeofenceConstants.LOCAL_GEOFENCE_EVENT));
+                .registerReceiver(mMessageReceiver, new IntentFilter(RNGeofenceConstants.LOCAL_GEOFENCE_EVENT));
     }
 
     private void unregisterReceiver() {
@@ -318,7 +318,7 @@ public class RNGeofenceModule extends ReactContextBaseJavaModule implements Life
             Double latitude = readableMap.getDouble("latitude");
             float radius = readableMap.hasKey("radius") ?
                     (float) readableMap.getDouble("radius") :
-                    GeofenceConstants.DEFAULT_RADIUS;
+                    RNGeofenceConstants.DEFAULT_RADIUS;
             int transitionTypes = Geofence.GEOFENCE_TRANSITION_ENTER
                     | Geofence.GEOFENCE_TRANSITION_EXIT;
             int loiteringDelay = 10;
@@ -344,10 +344,10 @@ public class RNGeofenceModule extends ReactContextBaseJavaModule implements Life
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            GeofenceDataObject dataObject = (GeofenceDataObject) intent.getSerializableExtra(GeofenceConstants.LOCAL_GEOFENCE_DATA);
-            Log.d(GeofenceConstants.MODULE_NAME, "Got data: " + dataObject);
+            RNGeofenceDataObject dataObject = (RNGeofenceDataObject) intent.getSerializableExtra(RNGeofenceConstants.LOCAL_GEOFENCE_DATA);
+            Log.d(RNGeofenceConstants.MODULE_NAME, "Got data: " + dataObject);
             getReactApplicationContext().getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                    .emit(GeofenceConstants.TRANSITION, RNGeofenceHelper.convertDataObjectToRNMap(dataObject));
+                    .emit(RNGeofenceConstants.TRANSITION, RNGeofenceHelper.convertDataObjectToRNMap(dataObject));
         }
     }
 

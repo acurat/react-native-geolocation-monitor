@@ -35,7 +35,7 @@ public class RNGeofenceBroadcastReceiver extends BroadcastReceiver {
         if (geofenceTransition == Geofence.GEOFENCE_TRANSITION_ENTER ||
                 geofenceTransition == Geofence.GEOFENCE_TRANSITION_EXIT) {
 
-            GeofenceDataObject geofenceDataObject = new GeofenceDataObject();
+            RNGeofenceDataObject geofenceDataObject = new RNGeofenceDataObject();
             List<String> requestIds = new ArrayList<>();
             for (Geofence geofence : geofencingEvent.getTriggeringGeofences()) {
                 requestIds.add(geofence.getRequestId());
@@ -47,8 +47,8 @@ public class RNGeofenceBroadcastReceiver extends BroadcastReceiver {
 
             if (RNGeofenceHelper.isAppOnForeground(context)) {
                 Log.i(MODULE_NAME, "App in the foreground");
-                Intent transitionIntent = new Intent(GeofenceConstants.LOCAL_GEOFENCE_EVENT);
-                transitionIntent.putExtra(GeofenceConstants.LOCAL_GEOFENCE_DATA, geofenceDataObject);
+                Intent transitionIntent = new Intent(RNGeofenceConstants.LOCAL_GEOFENCE_EVENT);
+                transitionIntent.putExtra(RNGeofenceConstants.LOCAL_GEOFENCE_DATA, geofenceDataObject);
                 LocalBroadcastManager.getInstance(context.getApplicationContext()).sendBroadcast(transitionIntent);
             } else {
                 // TODO background event

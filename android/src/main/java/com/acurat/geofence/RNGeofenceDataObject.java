@@ -26,7 +26,7 @@ public class RNGeofenceDataObject implements Serializable {
 
     @Override
     public String toString() {
-        return "GeofenceDataObject{" +
+        return "RNGeofenceDataObject{" +
                 "transitionType='" + transitionType + '\'' +
                 ", requestIds=" + requestIds +
                 '}';

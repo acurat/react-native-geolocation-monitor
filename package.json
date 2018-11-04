@@ -15,10 +15,6 @@
     "url": "git+https://github.com/eddieowens/react-native-boundary.git"
   },
   "license": "MIT",
-  "devDependencies": {
-    "react": "^16.2.0",
-    "react-native": "^0.51.0"
-  },
   "peerDependencies": {
     "react-native": ">=0.41.2"
   }

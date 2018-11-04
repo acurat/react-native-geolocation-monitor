@@ -6,7 +6,8 @@ react-native-geofencing uses iOS's CoreLocation and Android's location services 
 ## Installation
 
 ```shell
-npm install react-native-geofencing --save`
+npm install react-native-geofencing --save
+```
 
 or using yarn:
 
@@ -88,18 +89,15 @@ import RNGeofence, { Constants } from 'react-native-geofence';
 Initializes and requests permission from the user.
 
 ```js
+
+const params = {
+          requestPermission: true //Or false
+      };
 RNGeofence.initialize(params);
 ```
 
-**Notes**
+`RNGeofence.requestPermission()` must be called later if permission is not requested during init
 
-```javascript
-params = {
-    requestPermission: true //Or false
-}
-
-// RNGeofence.requestPermission(); must be called later if permission is not requested during init
-```
 ---
 
 ### requestPermission()

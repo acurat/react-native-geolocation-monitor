@@ -1,5 +1,5 @@
 {
-  "name": "react-native-geofencing",
+  "name": "react-native-geolocation-monitor",
   "version": "0.0.1",
   "description": "Create and monitor geofences using React Native",
   "main": "index.js",
@@ -16,7 +16,7 @@
   "author": "Arjun Curat",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eddieowens/react-native-boundary.git"
+    "url": "https://github.com/acurat/react-native-geolocation-monitor.git"
   },
   "license": "MIT",
   "peerDependencies": {

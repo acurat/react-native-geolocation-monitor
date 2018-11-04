@@ -53,7 +53,7 @@ project.xcworkspace
 
 # Android/IJ
 #
-react-native-geofencing.iml
+react-native-geolocation-monitor.iml
 .idea
 .gradle
 local.properties

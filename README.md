@@ -1,24 +1,24 @@
 
-# react-native-geofencing
+# react-native-geolocation-monitor
 
-react-native-geofencing uses iOS's CoreLocation and Android's location services to create and monitor circular geofences.
+react-native-geolocation-monitor uses iOS's CoreLocation and Android's location services to create and monitor circular geofences.
 
 ## Installation
 
 ```shell
-npm install react-native-geofencing --save
+npm install react-native-geolocation-monitor --save
 ```
 
 or using yarn:
 
 ```shell
-yarn add react-native-geofencing
+yarn add react-native-geolocation-monitor
 ```
 
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-geofencing`
+`$ react-native link react-native-geolocation-monitor`
 
 ### Manual installation
 
@@ -26,7 +26,7 @@ yarn add react-native-geofencing
 #### iOS
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-geofencing` and add `RNGeofence.xcodeproj`
+2. Go to `node_modules` ➜ `react-native-geolocation-monitor` and add `RNGeofence.xcodeproj`
 3. In XCode, in the project navigator, select your project. Add `libRNGeofence.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)
 
@@ -37,12 +37,12 @@ yarn add react-native-geofencing
   - Add `new RNGeofencePackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
-  	include ':react-native-geofencing'
-  	project(':react-native-geofencing').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-geofencing/android')
+  	include ':react-native-geolocation-monitor'
+  	project(':react-native-geolocation-monitor').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-geolocation-monitor/android')
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
   	```
-      compile project(':react-native-geofencing')
+      compile project(':react-native-geolocation-monitor')
   	```
 
 ### Post Installation

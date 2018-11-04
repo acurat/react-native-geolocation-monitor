@@ -168,7 +168,7 @@ public class RNGeofenceModule extends ReactContextBaseJavaModule implements Life
             return mGeofencePendingIntent;
         }
 
-        Intent intent = new Intent(getReactApplicationContext(), GeofenceBroadcastReceiver.class);
+        Intent intent = new Intent(getReactApplicationContext(), RNGeofenceBroadcastReceiver.class);
         mGeofencePendingIntent = PendingIntent.getBroadcast(getReactApplicationContext(),
                 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         return mGeofencePendingIntent;

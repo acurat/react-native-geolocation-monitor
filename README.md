@@ -32,8 +32,8 @@ yarn add react-native-geolocation-monitor
 
 #### Android
 
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.reactlibrary.RNGeofencePackage;` to the imports at the top of the file
+1. Open up `android/app/src/main/java/[...]/MainApplication.java`
+  - Add `import com.acurat.geofence.RNGeofencePackage;` to the imports at the top of the file
   - Add `new RNGeofencePackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
@@ -42,7 +42,7 @@ yarn add react-native-geolocation-monitor
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
   	```
-      compile project(':react-native-geolocation-monitor')
+      implementation project(':react-native-geolocation-monitor')
   	```
 
 ### Post Installation

@@ -53,6 +53,11 @@ public class RNGeofenceBroadcastReceiver extends BroadcastReceiver {
             } else {
                 // TODO background event
                 Log.i(MODULE_NAME, "App not in the foreground");
+                Intent backgroundService = new Intent(context.getApplicationContext(), RNGeofenceHeadlessJS.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable(GeofenceConstants.LOCAL_GEOFENCE_DATA, geofenceDataObject);
+                backgroundService.putExtras(bundle);
+                context.getApplicationContext().startService(backgroundService);
             }
         } else {
             // Log the error.
